@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title>Mi amor  &#x2665;</title>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap; 
+                border: 1px solid black;
+            }
+            .column {
+                flex: 1; 
+                min-width: 0; 
+                background-color: rgb(224, 122, 170);
+                padding: 20px;
+                box-sizing: border-box; 
+                border: 1px solid black;
+            }
+            @media (max-width: 767px) {
+            .column {
+             flex-basis: 100%; 
+             border: 1px solid black;
+            }
+            }
+            .heart {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: heartbeat 1s infinite;
+    }
+    
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 52px;
+      height: 80px;
+      border-radius: 50px 50px 0 0;
+      background: red;
+    }
+    
+    .heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    
+    @keyframes heartbeat {
+      0% {
+        transform: scale(0.8);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.8);
+      }
+    }
+    .colorful-button {
+      background-color: #FF3366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Estilos para los campos de entrada */
+    .rounded-input {
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      outline: none;
+    }
+    
+        </style>
+    <script type="text/javascript">
+        function compareDates() {
+            userDate = new Date(document.getElementById("userDate").value);
+            predefinedDate = new Date("2022-04-28");
+            if (userDate.toString() === "Invalid Date") {
+                 document.getElementById("result").innerHTML = "AMOR PON UNA FECHA ";
+                 document.getElementById("poema").style.display = "none";
+            } else if (userDate < predefinedDate) {
+                 document.getElementById("result").innerHTML = "QQQ TANTO ASI HAGO MI DRAMA ";
+                 document.getElementById("poema").style.display = "none";
+            } else if (userDate > predefinedDate) {
+                document.getElementById("result").innerHTML = "ES ENSERIO QUE TE OLVIDASTE ES MUY FEO DE TU PARTE";
+                document.getElementById("poema").style.display = "none";
+             } else {
+                document.getElementById("result").innerHTML = "Muy bien bb &#x2665;";
+                document.getElementById("poema").style.display = "block";
+             }
+        
+}
+    </script>    
+    </head>
+        <body>
+            <div class="container" id="inicio">
+                <div class="column">
+                    <h3>Fecha de nuestro primer beso</h3>
+                    <h3>Solo para saber si lo recuerdas bb</h3>
+                    <form id="dateForm">
+                        <label for="userDate">Ingrese la fecha:</label>
+                        <input type="date" id="userDate" class="rounded-input" required>
+                        <button type="button" class="colorful-button" onclick="compareDates()">VERIFICAR</button>
+                        </form>
+                        <h3 id="result"></h3>
+                </div>
+            </div>
+            <div class="container" id="poema" style="display: none;">
+                <div class="column">
+                    <h2>Mi hermosa princesita Yoshi &#x2665; </h2>
+                    <h3>Te quiero decir que te amo mucho cariñito mio hemos pasado muchas cosas juntos </h3>
+                    <h3>Mi corazon de melon dorado te amo &#x2665;</h3>
+                </div>
+                <div class="column">
+                    <h3>En tus brazos encontré mi hogar, en tu sonrisa descubrí mi felicidad y en tu amor hallé mi razón de ser</h3>
+                    <h3>En ti encontre mi paz interior Gracias por todo el amor mi vida</h3>
+                    <div class="heart"></div>
+                </div>
+                <div class="column">
+                    <h3>Asi late mi corazon mi amor te amo  &#x2665;</h3>
+                    <h3>Cariño durante todo es te tiempo bb 1 año de amarte mucho</h3>
+                    <div class="heart"></div>
+                </div>
+                <div class="column">
+                    <h3>Yoshira mi hermosa princesita mi cariño</h3>
+                    <h3>O mejor la mujer de mi vida de mi sueño te amo</h3>
+                    <h3>Siempre apesar de los problemas, los resolvemos </h3>
+                    <h3>Hemos pasado muchas cosas juntos y aun falta muchas mas tbm</h3>
+                    <h3>Intensas aventuras a lo largo de nuestra vida bb</h3>
+                    <h3>Raras talvez pero a tu lado todo es mejor a lado de mi </h3>
+                    <h3>Amor. Te amo Guapa &#x2665;</h3>
+                    <div class="heart"></div>
+                </div>
+          </div> 
+        </body>
+</html>

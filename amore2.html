@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title>Mi amor  &#x2665;</title>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap; 
+                border: 1px solid black;
+            }
+            .column {
+                flex: 1; 
+                min-width: 0; 
+                background-color: rgb(224, 122, 170);
+                padding: 20px;
+                box-sizing: border-box; 
+                border: 1px solid black;
+            }
+            @media (max-width: 767px) {
+            .column {
+             flex-basis: 100%; 
+             border: 1px solid black;
+            }
+            }
+            .heart {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: heartbeat 1s infinite;
+    }
+    
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 52px;
+      height: 80px;
+      border-radius: 50px 50px 0 0;
+      background: red;
+    }
+    
+    .heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    
+    @keyframes heartbeat {
+      0% {
+        transform: scale(0.8);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.8);
+      }
+    }
+    .colorful-button {
+      background-color: #FF3366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Estilos para los campos de entrada */
+    .rounded-input {
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      outline: none;
+    }
+    
+        </style>
+    <script type="text/javascript">
+        function compareDates(buttonValue) {
+            user = parseInt(buttonValue, 10);
+            if(user == 1){
+                userDate = new Date(document.getElementById("userDate").value);
+                predefinedDate = new Date("2022-02-14");
+            }
+            if(user == 2){
+                userDate = new Date(document.getElementById("userDate2").value);
+                predefinedDate = new Date("2022-04-28");
+            }
+            if (userDate.toString() === "Invalid Date") {
+                modificar(0,user)
+            } else if (userDate < predefinedDate) {
+                modificar(3,user)
+            } else if (userDate > predefinedDate) {
+                modificar(2,user)
+            }else {
+                modificar(1,user)
+             }
+        
+}
+function modificar(llegada,user){
+    if(user == 1){
+        if(llegada == 0){
+        document.getElementById("result").innerHTML = "AMOR PON UNA FECHA ";
+        document.getElementById("poema").style.display = "none";
+        document.getElementById("pregunta").style.display = "none";
+        } else if (llegada == 1){
+        document.getElementById("result").innerHTML = "Muy bien bb &#x2665;";
+        document.getElementById("poema").style.display = "block";
+        document.getElementById("pregunta").style.display = "block";
+        }else{
+            document.getElementById("result").innerHTML = aleatorio();
+            document.getElementById("poema").style.display = "none";
+            document.getElementById("pregunta").style.display = "none";  
+        }
+    }
+    if(user == 2){
+        if(llegada == 0){
+        document.getElementById("result2").innerHTML = "AMOR PON UNA FECHA ";
+        } else if (llegada == 1){
+        document.getElementById("result2").innerHTML = "Muy bien bb &#x2665; <br> Te la dedico amor espera ...";
+        setTimeout(function() {
+            window.location.href ="https://www.youtube.com/watch?v=gO8-9OWzPOQ";
+        }, 4000);
+        }else{
+            document.getElementById("result2").innerHTML = aleatorio();
+        }
+    }
+}
+function aleatorio() {
+    var arr=['QQQ TANTO ASI HAGO MI DRAMA',
+    'ES ENSERIO QUE TE OLVIDASTE ES MUY FEO DE TU PARTE',
+    'Y ASI DICES QUE ME AMAS',
+    'MIRALA A LA SEÑORITA :(',
+    'ME DA UN INFARTO ',
+    'COMO ES POSIBLE ESTE SUCESO',
+    'OTRA VEZ TU ACA',
+    'INTERSANTE :(',
+    'YA ME MOLESTE ',
+    'INTENTALO OTRA VEZ',
+    'TE AMO PERO ESE NO ES'
+]
+    var indiceAleatorio = Math.floor(Math.random() * arr.length);
+  return arr[indiceAleatorio];
+}
+    </script>    
+    </head>
+        <body>
+            <div class="container" id="inicio">
+                <div class="column">
+                    <h3>Fecha de nuestro primer encuentro</h3>
+                    <h3>Solo para saber si lo recuerdas bb y si no ya sabes bb</h3>
+                    <form id="dateForm">
+                        <label for="userDate">Ingrese la fecha:</label>
+                        <input type="date" id="userDate" class="rounded-input" required>
+                        <button type="button" class="colorful-button" value="1" id="myButton" onclick="compareDates(this.value)">VERIFICAR</button>
+                        </form>
+                        <h3 id="result"></h3>
+                </div>
+            </div>
+            <div class="container" id="poema" style="display: none;">
+                <div class="column">
+                    <h2>Mi pequeña y hermosa bbsita preciosa &#x2665; </h2>
+                    <h3>Te amo un chingo no se que me hiciste bb pero cuando te veo me siento en paz me gustaria dormir a tu lado descansar en tu hombro </h3>
+                    <h3>Mi corazon de melon dorado (recuerdas que era verdad ) te amo &#x2665;</h3>
+                </div>
+                <div class="column">
+                    <h3>En ti encontre muchas cosas de muchas formas me viste de todas las formas posible (jejeje) Cariño Te amo</h3>
+                    <h3>Amor mi vida preciosa Te amo mucho Guapota</h3>
+                    <div class="heart"></div>
+                </div>
+                <div class="column">
+                    <h3>Asi late mi corazon mi amor te amo  &#x2665;</h3>
+                    <h3>Cariño durante todo es te tiempo mi amor x ti a crecido mucho bb se que esto no iguala a una carta de verdad pero me gusto escribirte esta carta si te equivocas </h3>
+                    <div class="heart"></div>
+                </div>
+                <div class="column">
+                    <h3>Yoshira mi hermosa princesita mi cariño</h3>
+                    <h3>O mejor la mujer de mi vida de mi sueño te amo</h3>
+                    <h3>Siempre apesar de los problemas, los resolvemos </h3>
+                    <h3>Hemos pasado muchas cosas juntos y aun falta muchas mas tbm</h3>
+                    <h3>Intensas aventuras a lo largo de nuestra vida bb</h3>
+                    <h3>Raras talvez pero a tu lado todo es mejor a lado de mi </h3>
+                    <h3>Amor. Te amo Guapa &#x2665;</h3>
+                    <h3>Na esta parte la amo y siempre te la mandare XD</h3>
+                    <div class="heart"></div>
+                </div>
+
+          </div> 
+          <div class="container" id="pregunta" style="display: none;">
+            <div class="column">
+                <h3>Fecha de nuestro primer beso</h3>
+                <h3>Otra prueba JAJAJAJA</h3>
+                <form id="dateForm2">
+                    <label for="userDate2">Ingrese la fecha:</label>
+                    <input type="date" id="userDate2" class="rounded-input" required>
+                    <button type="button" class="colorful-button" value="2" onclick="compareDates(this.value)">VERIFICAR</button>
+                    </form>
+                    <h3 id="result2"></h3>
+            </div>
+        </div>
+        </body>
+</html>
